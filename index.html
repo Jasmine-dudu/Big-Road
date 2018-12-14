@@ -1,0 +1,215 @@
+<html>
+
+<head>
+    <title>Big Road: Simplist's solution to a mobile-only web story</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0">
+    <style>
+        /* Inspired by: http://embedresponsively.com/ */
+        
+        responsive-block {
+            display: block;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        
+        ratio-1-to-1 responsive-block {
+            display: block;
+            position: relative;
+            padding-bottom: 100%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        
+        ratio-4-to-3 responsive-block {
+            display: block;
+            position: relative;
+            padding-bottom: 75%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        
+        responsive-block iframe,
+        responsive-block object,
+        responsive-block embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        body {
+            max-width: 360px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #333;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        p {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        figure {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        
+        figure figcaption {
+            display: block;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            font-size: 0.85em;
+        }
+        
+        h2 {
+            border-bottom: 1px solid #ccc;
+            margin-top: 2em
+        }
+        
+        cover-image {
+            display: block;
+            position: relative;
+        }
+        
+        cover-image h1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            color: #eee;
+            text-align: center;
+        }
+        
+        cover-image author-block {
+            position: absolute;
+            bottom: 1em;
+            left: 0;
+            right: 0;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            opacity: 0.6;
+            background-color: white;
+        }
+        
+        code {
+            margin: 0;
+            max-width: 100%;
+            word-break: break-all;
+            font-family: monospace;
+        }
+        .fig{
+        	text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <cover-image>
+        <img src="images/cover.png" alt="cover photo">
+    </cover-image>
+
+    <p>According to Statista, the global mobile internet penetration has exceeded half the world’s population, while the average daily time spent accessing online content from a mobile device, such as a smartphone, a tablet computer or wearable, has reached 185 minutes daily among Millennials. Currently, the two largest global platforms for app distribution are Apple’s App Store, which caters to iOS users, and Google Play, the official app store for the Android OS. The fact that mobile apps are relatively easier to create than computer apps, as well as their considerably lower price has translated into a growing industry which produce every year more and more. It is impossible to know exactly how many apps are there, but as of March 2018 there were some 3.6 million apps in Google Play alone. So, how to create a successful mobile app winning more customers in fierce competition? What key ingredients do the popular apps possess? In order to figure out these questions, we use the dataset provided by www.kaggle.com and make some descriptive statistical analysis in this report.</p>
+
+    <h1> Dataset </h1>
+
+    <p>
+        The dataset contains web scraped data of top 1000 apps in score provided by Google Play Store. There are 9 features that describe a given app, which are App Category, Rating, Reviews, Size, Installs, Type, Price, Content Rating, Genres. We make some descriptive statistical analysis on the dataset. And we also conclude some attributes of these good Apps to give some suggestion to Apps developers.
+    </p>
+
+    <h2> Category </h2>
+    <img src="images/cat1.png">
+    <br>
+    <div class="fig">
+    <p>Fig.1</p>
+    </div>
+    <br>
+    <img src="images/cat2.png">
+    <div class="fig">
+    <p>Fig.2</p>
+	</div>
+    <p>What the quantities are most is the apps related to Family, Game, Medical, Tools and Lifestyle (Fig. 1). However, Tools, Education, Travel, Game and Video Players are the five kinds of applications downloaded most (Fig. 2). The mismatch between supply and users’ demand indicates there is still much room to develop for the apps offering service including education, travel and playing videos.
+	That means you will face less competitors and may have much bigger market.
+	</p>
+
+  
+
+    <h2>Promotion Strategy</h2>
+    <img src="images/prosta.png">
+    <br>
+    <div class="fig">
+    	<p>Fig.3</p>
+    </div>
+    <p>
+       It is strange to note no matter how much the installs increase; the reviews keep relatively stable with no more than 1k users willing to review (Fig.3). Users' willingness to comment needs to be stimulated by something and the Apps developers should not only wait for users to give their positive assessments voluntarily but should guide their users to make positive reviews since it can help to build good reputation and product image. 
+    </p>
+
+    <h2>Apps’ Sizes</h2>
+ 	<img src="images/Size&installs.png">
+ 	<br>
+ 	<div class="fig">
+ 		<p>Fig.4</p>
+ 	</div>
+    <p>The following chart (Fig.4) illustrates that a positive correlation existing between Size and Installs — the smaller the size, the more the installs. Also, paid apps gain much less installs than free apps, as only the blue spots occur in the top of the figure. 
+	It shows when the sizes are in the range of 20~60 M, users are more likely to install them. This conclusion lead to a strategy that developers need to control the size of Apps in this range, and if the size of app cannot be compress, maybe they should solve this problem by dividing the process of download by many times or updating them step by step.
+    </p>
+
+    <h2>Pricing Starategy</h2>
+    <responsive-block>
+        <iframe src='charts/Type top10 Apps.html'  id="ifm" frameBorder=0 scrolling=yes >
+        </iframe>
+    </responsive-block>
+
+    <p>The Fig.3 demonstrates the percentage of category diversity among free apps, while Fig.4 shows that among paid apps. It is apparent to see that Family, Game and Medical are top 3 categories among free type apps. At the same time, Family and Personalization rank top 2 in terms of paid apps. Moreover, all the social apps are free of charge, which is appealing to users.</p>
+    <br>
+    <img src="images/pristra.png">
+    <div class="fig">
+    	<p>Fig.5</p>
+    </div>
+    <p>These scatter chart show that people are more likely to pay on Personalization and Game, which means Apps developers need to consider about the individuation and funny designs in Apps to improve profit. But the prices of Apps need to between a reasonable range, fig.5 shows that the apps costing less than $5 are more popular. Users would not like to pay much for purchasing applications, thus, Apps which cost more may need to provide a free trail to increase consuming willingness.</p>
+
+    <h2>Content Rating and Potential Market</h2>
+    <img src="images/CRPM.png">
+    <div class="fig">
+    	<p>Fig.6</p>
+    </div>
+    <p>According to the Content Rating, these 1000 apps are divided into four types. Everyone, Teen, Everyone 10 plus and Mature 17 plus. This bar chart shows these three types, except Everyone, include which categories. We mainly focus on the mature 17+ and teen type. In these limited Apps, Social, Family and Game account for the largest parts. The most popular category for adults is social, but it also shows that this market is very mature, both of the quality and quantity of these apps. We can also see in these fields, both for teen and adults, there are still gaps in the market.</p>
+
+    <h3>Marketing Strategy</h3>
+    <img src="images/mastr.png">
+    <p>In Fig.6 we also find something very interesting. The Category of Family, apps in this category are mainly for parent-child, like education or brain games. But here are so many family apps under the mature 17plus tag, we think it is very strange. We can see the app, anakare, a typical not-for-children-under-18 game, is under the family category.
+	And  Chat room for kids, but has the mature 17plus tag. We think this may be a marketing strategy, take this one as example, this is in fact an adventure game, but in the category of game, the competition is very fierce. They put it in the family category, people may be curious and install then its rank on the list will rise. That is a good way of advertising.
+	Then our future work includes four parts: scraping original data, comparing the data from apple store, analyzing more category and content rating mistakes to find whether it is a strategy, and do the content analysis of reviews.
+</p>
+
+	<h1>Conclusions</h1>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-37311363-17"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-37311363-17');
+    </script>
+
+</body>
+
+</html>
